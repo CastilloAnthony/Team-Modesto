@@ -1,6 +1,6 @@
 discord music game bot
   -capable of primarily an audio-based(voiceChat) guessing game
-  lyrical(text-based)
+  -Secondarily, the bot will be capable of a lyrical(text-based) guessing game too
 
 We'll need multiple functions:
 -function apiHandShake() --should return true or false depending on if the handshake was successful
@@ -9,3 +9,17 @@ We'll need multiple functions:
 
 -function randomizePlaylist() --this should create a semirandom vector/array based on the one that we used to pull the original playist from
 
+-function getPlayers()
+
+-function readTextChat()
+
+-function joinVoiceChannel()
+
+We'll also want to have some "global" variables
+-vector playListData
+
+-vector rAndomizedPlaylistData
+
+-int player count
+
+And more!!
