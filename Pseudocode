@@ -1,2 +1,11 @@
 discord music game bot
-  -capable of two main games: lyrical(text-based) & an audio-based(voiceChat)]
+  -capable of primarily an audio-based(voiceChat) guessing game
+  lyrical(text-based)
+
+We'll need multiple functions:
+-function apiHandShake() --should return true or false depending on if the handshake was successful
+
+-funciton grabPlaylistData() --might return a vector/array of the raw 
+
+-function randomizePlaylist() --this should create a semirandom vector/array based on the one that we used to pull the original playist from
+
