@@ -24,7 +24,7 @@ private:
 	bool initialized;
 
 	DWORD bufferSize, numItems;
-	LPWSTR szDataSource, szMachineName;
+	LPWSTR szDataSource, szMachineName; // test
 	std::fstream inData;
 	std::fstream outData;
 	std::vector<double> cpuData;
