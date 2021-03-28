@@ -1,6 +1,9 @@
 import discord
 from discord.ext import commands
 
+import spotipy
+from spotipy.oauth2 import SpotifyClientCredentials
+
 import os
 import random
 import json
@@ -10,9 +13,9 @@ import matplotlib
 
 #access token dictionaries
 discordAccessTokens = {
-    'client_id': CLIENT_ID,
-    'client_secret': CLIENT_SECRET,
-    'grant_type': 'authorization_code',
+    'client_id': '825473823751143424',
+    'client_secret': '4aIFW7ESBbNLw2JLmnjk8oA_DC9OSJZn',
+    'grant_type': 'authorization_code', #not quite sure what to put here V
     'code': code,
     'redirect_uri': REDIRECT_URI,
     'scope': 'identify email connections'
@@ -48,7 +51,7 @@ playerMessageDataQueue = {
     'playerID' : message,
     }
 
-listOfBotCommands = {
+listOfBotCommands = {                      #I don't think this is how commands work for discord -K
     'command1' : "!play gametype 1",
     'command2' : "!play gametype 2",
     'command3' : "!pause",
@@ -56,6 +59,12 @@ listOfBotCommands = {
     }
 
 discordTextChannel = "music" #or something else
+
+client = commands.Bot(command_prefix = '!') #discord command start; I labeled it as client -K
+
+@client.event               #Checks to see if bot it online/ready -K
+async def on_ready(): 
+    print("Bot is ready.")
 
 #function prototypes below
 
@@ -128,7 +137,7 @@ def create(players, user, id):
 
 
 #the code below is copied from https://github.com/plamere/spotipy
-from spotipy.oauth2 import SpotifyClientCredentials
+#from spotipy.oauth2 import SpotifyClientCredentials **I put it at the top -K
 sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(spotifyAccessTokens[client_id], spotifyAccessTokens[client_secret]))
 
 query = "" #this should be all the songs from the playlist could be 
